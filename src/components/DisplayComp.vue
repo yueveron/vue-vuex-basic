@@ -1,8 +1,7 @@
 <template>
   <div>
-    <p>You chose {{ $store.state.flavor }}</p>
-    <p>{{ content }}</p>
-    <p>You chose msg {{ msg }}</p>
+    <p>You chose {{ $store.getters.flavor }}</p>
+    <p>computed : {{ content }}</p>
   </div>
 </template>
 
@@ -10,12 +9,7 @@
 export default {
   computed: {
     content () {
-      return this.$store.state.count
-    }
-  },
-  data () {
-    return {
-      msg: this.$store.state.flavor
+      return this.$store.getters.flavor
     }
   }
 }
